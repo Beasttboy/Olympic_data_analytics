@@ -1,7 +1,7 @@
 # Olympic Data Analytics Project – Azure End-to-End Data Engineering
-This README provides an overview and setup guide for the Olympic Data Analytics project, as demonstrated in this YouTube video by Darshil Parmar. The project showcases how to build a complete data engineering pipeline using Microsoft Azure services to analyze Tokyo 2021 Olympic data.
+This README provides an overview and setup guide for the Olympic Data Analytics project. The project showcases how a complete data engineering pipeline using Microsoft Azure services to analyze Tokyo 2021 Olympic data.
 
-**Project Overview**
+## 🔍 Project Overview  
 
 This project demonstrates an end-to-end data engineering workflow on Azure, including:
 
@@ -11,39 +11,60 @@ Data Transformation: Cleaning and transforming data using Azure Databricks (Apac
 Analytics & Visualization: Querying transformed data with Azure Synapse Analytics and creating visualizations (optionally with Power BI).
 
 
-**Project Architecture**
+## 🏗 Architecture  
 
 ![image](https://github.com/user-attachments/assets/4f3894c1-9fc6-4c43-ba34-524beeb94b91)
 
 
 
 
-**Dataset**
-
-Source: Tokyo Olympics 2021 Dataset on Kaggle
 
 
-**Files Included :**
+- **Azure Data Factory (ADF):** Orchestrates data ingestion pipelines, moves data from raw storage into processing layers.  
+- **Azure Databricks:** Performs distributed data processing (Spark) — cleansing, transforming, aggregating Olympic data.  
+- **Azure Storage (Data Lake Gen2):** Raw and processed data storage layers (bronze/silver/gold).  
+- **Azure SQL Database / Synapse Analytics:** Hosts cleaned, transformed data for analytics and reporting.  
+- **Power BI / Dashboarding:** Generates dynamic visual insights from the transformed dataset.
 
-•	athletes.csv
+## 🧰 Technologies Used  
+- Azure Data Factory  
+- Azure Databricks (Apache Spark, PySpark)  
+- Azure Storage – Data Lake Gen2  
+- Azure SQL Database / Azure Synapse Analytics  
+- Power BI (or equivalent visualization tool)  
+- Python, SQL, Spark scripting  
+- Medallion architecture (Bronze → Silver → Gold layers)
 
-•	coaches.csv
+## 🚀 Getting Started  
+### Prerequisites  
+- Active Azure subscription (free trial or paid)  
+- Provisioned Azure Data Factory instance  
+- Azure Databricks workspace with cluster access  
+- Azure Storage account (Gen2)  
+- Azure SQL Database or Synapse workspace  
+- Basic familiarity with Python, PySpark, SQL, and Azure portal  
 
-•	entries_gender.csv
+### Setup & Usage  
+1. Clone this repository to your local machine or workspace.  
+2. Upload or link to the raw Olympic dataset(s).  
+3. In ADF, configure Linked Services and Pipelines for data ingestion (raw → bronze).  
+4. In Databricks, launch notebooks to clean and transform data (bronze → silver/gold).  
+5. Persist the final structured tables into your SQL/Synapse database for analytics.  
+6. Connect Power BI (or other BI tool) to generate dashboards and visuals from the cleaned dataset.  
+7. Monitor and schedule pipelines for updated runs if you wish to refresh the dataset periodically.
 
-•	medals.csv
+## 📊 Data Ingestion & Processing Workflow  
+- Raw data ingestion via ADF from source(s) (CSV/API) into Azure Storage.  
+- Transformation and enrichment in Databricks: deduplication, normalization, join of athlete/team entries, medal counts, gender distribution.  
+- Storage in structured tables (e.g., Athletes, Teams, Medals) in Azure SQL/Synapse.  
+- Creation of dashboards showing: medal tallies by country, athlete gender trends, sport-wise performance across Games.
 
-•	teams.csv
+## ✅ Outcome & Impact  
+This project demonstrates how to build a **scalable, maintainable cloud data pipeline** that transforms large volumes of unstructured or semi-structured sports data into actionable insights. For a recruiter or hiring manager, this showcases your ability to:  
+- Design and implement an end-to-end data engineering solution in the cloud  
+- Work with modern data architectures (bronze/silver/gold layering)  
+- Integrate multiple Azure services (ADF, Databricks, Storage, SQL/Synapse)  
+- Produce analytics and visualization that highlight domain insights (sports data in this case)  
 
-
-**Azure Services Used**
-
-•	Azure Data Factory: Orchestrates data ingestion from the source to Azure Data Lake.
-
-•	Azure Data Lake Storage Gen2: Stores both raw and processed data.
-
-•	Azure Databricks: Performs data cleaning and transformation using Spark.
-
-•	Azure Synapse Analytics: Enables SQL-based analytics and reporting.
-
-•	(Optional) Power BI: For dashboarding and visualization.
+## 👤 Author  
+@Beasttboy
